@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Introdução à Programação Orientada a Objetos (POO)</title>
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Code:wght@400;500;700&family=Outfit:wght@300;400;600;800&display=swap" rel="stylesheet">
+    <!-- FontAwesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Background Decor Elements -->
+    <div class="bg-glow blob-1"></div>
+    <div class="bg-glow blob-2"></div>
+    <div class="bg-glow blob-3"></div>
+
+    <div class="app-container">
+        <!-- Progress Bar -->
+        <div class="progress-container">
+            <div class="progress-bar" id="progressBar"></div>
+        </div>
+
+        <!-- Slides Wrapper -->
+        <main class="slides-wrapper">
+            
+            <!-- Slide 1: Hero / Capa -->
+            <section class="slide active" id="slide-1">
+                <div class="slide-content hero-slide">
+                    <div class="badge animate-pop">Apresentação Didática</div>
+                    <h1 class="hero-title">Programação Orientada a Objetos</h1>
+                    <p class="hero-subtitle">Desmistificando os conceitos de <strong>Classes</strong> e <strong>Objetos</strong> de forma prática e visual.</p>
+                    <div class="hero-code-preview">
+                        <pre><code><span class="keyword">class</span> <span class="class-name">Cachorro</span>:
+    <span class="keyword">def</span> <span class="function-name">__init__</span>(<span class="self">self</span>, nome, raca):
+        <span class="self">self</span>.nome = nome
+        <span class="self">self</span>.raca = raca</code></pre>
+                    </div>
+                    <button class="btn btn-primary" onclick="nextSlide()">
+                        Começar Aula <i class="fas fa-arrow-right"></i>
+                    </button>
+                </div>
+            </section>
+
+            <!-- Slide 2: O que é POO? -->
+            <section class="slide" id="slide-2">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">01 / 05</span>
+                        <h2>O que é POO?</h2>
+                    </div>
+                    <div class="grid-2col">
+                        <div class="text-block">
+                            <p class="lead">A **Programação Orientada a Objetos (POO)** é um modelo ou <em>paradigma</em> de programação.</p>
+                            <p>Em vez de escrevermos códigos como uma lista de instruções sequenciais, nós organizamos o nosso sistema imitando o mundo real: através de <strong>Objetos</strong> que interagem entre si.</p>
+                            
+                            <div class="info-box">
+                                <i class="fas fa-lightbulb"></i>
+                                <div>
+                                    <h4>Por que usar?</h4>
+                                    <p>Facilita a manutenção, o reaproveitamento de código e deixa sistemas complexos muito mais organizados.</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="visual-card">
+                            <div class="paradigm-comparison">
+                                <div class="comp-box">
+                                    <span class="comp-title">Programação Estruturada</span>
+                                    <ul class="comp-list">
+                                        <li><i class="fas fa-list-ol"></i> Sequência de passos</li>
+                                        <li><i class="fas fa-code-branch"></i> Funções soltas</li>
+                                        <li><i class="fas fa-times-circle"></i> Difícil de reutilizar</li>
+                                    </ul>
+                                </div>
+                                <div class="comp-box highlight">
+                                    <span class="comp-title">Orientação a Objetos</span>
+                                    <ul class="comp-list">
+                                        <li><i class="fas fa-cubes"></i> Módulos independentes</li>
+                                        <li><i class="fas fa-circle-nodes"></i> Dados + Ações juntos</li>
+                                        <li><i class="fas fa-check-circle"></i> Altamente reutilizável</li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 3: Classe vs Objeto -->
+            <section class="slide" id="slide-3">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">02 / 05</span>
+                        <h2>Classe vs Objeto: A Grande Analogia</h2>
+                    </div>
+                    <div class="grid-2col">
+                        <div class="card-analogy">
+                            <div class="card-icon"><i class="fas fa-drafting-compass"></i></div>
+                            <h3>A Classe (O Molde)</h3>
+                            <p>Pense na classe como a <strong>planta de engenharia</strong> de uma casa ou a <strong>receita</strong> de um bolo. Ela não é a casa física, mas define exatamente como a casa deve ser construída.</p>
+                            <ul class="concept-tags">
+                                <li>Modelo</li>
+                                <li>Planta</li>
+                                <li>Abstrato</li>
+                                <li>Estrutura</li>
+                            </ul>
+                        </div>
+                        <div class="card-analogy highlight">
+                            <div class="card-icon"><i class="fas fa-home"></i></div>
+                            <h3>O Objeto (A Instância)</h3>
+                            <p>O objeto é a <strong>casa construída</strong> a partir da planta, ou o <strong>bolo real</strong> feito a partir da receita. Ele tem forma física, ocupa espaço e possui suas próprias características.</p>
+                            <ul class="concept-tags">
+                                <li>Realidade</li>
+                                <li>Instância</li>
+                                <li>Concreto</li>
+                                <li>Indivíduo</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 4: O Código - A Classe -->
+            <section class="slide" id="slide-4">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">03 / 05</span>
+                        <h2>A Classe: Construindo o Molde</h2>
+                    </div>
+                    <p class="slide-intro">Passe o mouse (ou toque) nas partes destacadas do código para entender sua função:</p>
+                    <div class="grid-code">
+                        <div class="code-interactive-box">
+                            <pre><code><span class="code-line-highlight" data-explanation="class-def"><span class="keyword">class</span> <span class="class-name">Cachorro</span>:</span>
+    
+    <span class="code-line-highlight" data-explanation="init-def"><span class="keyword">def</span> <span class="function-name">__init__</span>(<span class="self">self</span>, nome, raca):</span>
+        <span class="code-line-highlight" data-explanation="attributes"><span class="self">self</span>.nome = nome
+        <span class="self">self</span>.raca = raca</span>
+        
+    <span class="code-line-highlight" data-explanation="methods"><span class="keyword">def</span> <span class="function-name">latir</span>(<span class="self">self</span>):
+        <span class="keyword">return</span> <span class="string">f"</span><span class="variable">{self.nome}</span><span class="string"> Diz: Au au"</span></span></code></pre>
+                        </div>
+                        <div class="explanation-box" id="code-explanation">
+                            <div class="explanation-placeholder">
+                                <i class="fas fa-hand-pointer"></i>
+                                <p>Passe o mouse sobre as linhas de código para ver a explicação passo a passo.</p>
+                            </div>
+                            <!-- Explanations are injected or shown via classes dynamically -->
+                            <div class="explanation-item" id="exp-class-def">
+                                <h3><i class="fas fa-tag"></i> Declarando a Classe</h3>
+                                <p>A palavra-chave <code>class</code> diz ao Python que estamos definindo um novo molde/projeto chamado <code>Cachorro</code>. Por convenção, nomes de classes começam com letra maiúscula.</p>
+                            </div>
+                            <div class="explanation-item" id="exp-init-def">
+                                <h3><i class="fas fa-key"></i> O Construtor (__init__)</h3>
+                                <p>O método <code>__init__</code> é o <strong>construtor</strong> da classe. Ele roda automaticamente no momento em que criamos um novo cachorro. O parâmetro <code>self</code> representa o cachorro específico que está sendo criado.</p>
+                            </div>
+                            <div class="explanation-item" id="exp-attributes">
+                                <h3><i class="fas fa-fingerprint"></i> Atributos (Características)</h3>
+                                <p><code>self.nome</code> e <code>self.raca</code> são <strong>atributos</strong>. Eles guardam as características/dados de cada cachorro criado. Cada cachorro terá seu próprio nome e raça.</p>
+                            </div>
+                            <div class="explanation-item" id="exp-methods">
+                                <h3><i class="fas fa-running"></i> Métodos (Comportamentos)</h3>
+                                <p><code>latir(self)</code> é um <strong>método</strong>. Métodos são funções criadas dentro da classe que representam as ações ou comportamentos que o objeto pode realizar.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 5: O Código - Instanciando -->
+            <section class="slide" id="slide-5">
+                <div class="slide-content">
+                    <div class="slide-header">
+                        <span class="slide-number">04 / 05</span>
+                        <h2>O Objeto: Dando Vida ao Molde</h2>
+                    </div>
+                    <div class="grid-2col">
+                        <div class="code-interactive-box">
+                            <pre><code><span class="comment"># Criando um objeto (Instanciação)</span>
+meu_dog1 = <span class="class-name">Cachorro</span>(<span class="string">"Rex"</span>, <span class="string">"Labrador"</span>)
+
+<span class="comment"># Acessando atributos e métodos</span>
+print(meu_dog1.nome)   <span class="comment"># Saída: Rex</span>
+print(meu_dog1.latir()) <span class="comment"># Saída: Rex Diz: Au au</span></code></pre>
+                            
+                            <div class="dog-creator-widget">
+                                <h3>Instanciador Interativo</h3>
+                                <p class="widget-desc">Altere os valores abaixo para criar seu próprio cachorro em tempo real!</p>
+                                <div class="form-group">
+                                    <label for="dog-name">Nome:</label>
+                                    <input type="text" id="dog-name" value="Rex" maxlength="15">
+                                </div>
+                                <div class="form-group">
+                                    <label for="dog-breed">Raça:</label>
+                                    <input type="text" id="dog-breed" value="Labrador" maxlength="20">
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="virtual-dog-stage">
+                            <div class="dog-card">
+                                <div class="dog-avatar-container">
+                                    <div class="dog-avatar"><i class="fas fa-dog"></i></div>
+                                    <div class="bark-bubble" id="barkBubble">Rex diz: Au au!</div>
+                                </div>
+                                <div class="dog-info">
+                                    <h4>Objeto: <code class="highlight-var">meu_dog1</code></h4>
+                                    <p><strong>Classe de origem:</strong> <code>Cachorro</code></p>
+                                    <div class="dog-attributes-preview">
+                                        <div><span class="attr-label">.nome</span> <span class="attr-val" id="val-nome">"Rex"</span></div>
+                                        <div><span class="attr-label">.raca</span> <span class="attr-val" id="val-raca">"Labrador"</span></div>
+                                    </div>
+                                    <div class="dog-actions">
+                                        <button class="btn btn-secondary btn-sm" onclick="triggerBark()">
+                                            <i class="fas fa-volume-up"></i> Executar meu_dog1.latir()
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Slide 6: Resumo Geral -->
+            <section class="slide" id="slide-6">
+                <div class="slide-content text-center">
+                    <div class="slide-header">
+                        <span class="slide-number">05 / 05</span>
+                        <h2>Resumo dos Conceitos Chave</h2>
+                    </div>
+                    <div class="grid-3col">
+                        <div class="summary-card">
+                            <div class="summary-icon"><i class="fas fa-cube"></i></div>
+                            <h3>POO</h3>
+                            <p>Paradigma de programação que organiza o sistema mapeando conceitos do mundo real para códigos através de objetos.</p>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon"><i class="fas fa-drafting-compass"></i></div>
+                            <h3>Classe</h3>
+                            <p>O molde abstrato, planta ou modelo a partir do qual novos objetos são definidos e estruturados.</p>
+                        </div>
+                        <div class="summary-card">
+                            <div class="summary-icon"><i class="fas fa-puzzle-piece"></i></div>
+                            <h3>Objeto</h3>
+                            <p>A instância física, concreta e real de uma Classe. Possui seus próprios dados (atributos) e funções (métodos).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="presentation-footer">
+                        <h3>Pronto para apresentar! 🎉</h3>
+                        <p>Use as teclas <strong>Direita & Esquerda</strong> do teclado para navegar nos slides.</p>
+                        <div class="footer-buttons">
+                            <button class="btn btn-secondary" onclick="restartPresentation()">
+                                <i class="fas fa-undo"></i> Reiniciar
+                            </button>
+                            <a href="https://www.online-python.com/" target="_blank" class="btn btn-primary" rel="noopener noreferrer">
+                                <i class="fab fa-python"></i> Testar Código Online
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <!-- Navigation Controls -->
+        <footer class="controls">
+            <button class="nav-btn" id="prevBtn" onclick="prevSlide()" disabled>
+                <i class="fas fa-chevron-left"></i> Anterior
+            </button>
+            <div class="slide-indicator" id="slideIndicator">Slide 1 de 6</div>
+            <button class="nav-btn" id="nextBtn" onclick="nextSlide()">
+                Próximo <i class="fas fa-chevron-right"></i>
+            </button>
+        </footer>
+    </div>
+
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
